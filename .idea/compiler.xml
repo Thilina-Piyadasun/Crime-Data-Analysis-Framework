@@ -22,13 +22,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="Crime-Data-Analysis-Framework" />
         <module name="machine-learner" />
         <module name="preprocessor" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Crime-Data-Analysis-Framework" target="1.5" />
+      <module name="frontConnector" target="1.5" />
       <module name="machine-learner" target="1.5" />
       <module name="preprocessor" target="1.5" />
     </bytecodeTargetLevel>
