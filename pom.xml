@@ -12,6 +12,7 @@
         <module>preprocessor</module>
         <module>machine-learner</module>
         <module>front-connector</module>
+        <module>statistical-analyzer</module>
     </modules>
 
 

@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/front-connector/frontConnector.iml" filepath="$PROJECT_DIR$/front-connector/frontConnector.iml" />
       <module fileurl="file://$PROJECT_DIR$/machine-learner/machine-learner.iml" filepath="$PROJECT_DIR$/machine-learner/machine-learner.iml" />
       <module fileurl="file://$PROJECT_DIR$/preprocessor/preprocessor.iml" filepath="$PROJECT_DIR$/preprocessor/preprocessor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/statistical-analyzer/statistical_analyzer.iml" filepath="$PROJECT_DIR$/statistical-analyzer/statistical_analyzer.iml" />
     </modules>
   </component>
 </project>

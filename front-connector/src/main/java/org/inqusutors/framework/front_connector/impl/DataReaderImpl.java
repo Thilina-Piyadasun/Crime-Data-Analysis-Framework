@@ -1,8 +1,9 @@
 package org.inqusutors.framework.front_connector.impl;
 
 import org.apache.spark.SparkConf;
-import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.sql.DataFrame;
+import org.apache.spark.sql.SQLContext;
 import org.apache.spark.storage.StorageLevel;
 import org.inqusutors.framework.front_connector.api.DataReader;
 
@@ -12,7 +13,8 @@ import org.inqusutors.framework.front_connector.api.DataReader;
  */
 public class DataReaderImpl implements DataReader {
 
-    static JavaRDD<String> input;
+    //static JavaRDD<String> input;
+    static DataFrame input;
 
     public void setSystemProperty(String hadoop_home){
         System.setProperty("hadoop.home.dir", hadoop_home);
@@ -28,9 +30,14 @@ public class DataReaderImpl implements DataReader {
         SparkConf conf = new SparkConf().setMaster("local").setAppName("DataReader");
 
         JavaSparkContext sc = new JavaSparkContext(conf);
+        SQLContext sqlContext = new SQLContext(sc);
 
-        // Load the input data to a static rdd
-        input = sc.textFile( filename );
+        // Load the input data to a static Data Frame
+        input=sqlContext.read()
+                .format("com.databricks.spark.csv")
+                .option("header","true")
+                .option("inferSchema","true")
+                .load(filename);
 
         cache_data(storage_level);
     }
