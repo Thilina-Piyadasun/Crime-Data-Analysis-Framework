@@ -1,4 +1,4 @@
-package org.inqusutors.framework.stastical_analyzer.api;
+package org.inquisitors.framework.statistical_analyzer.api;
 
 import org.apache.spark.sql.DataFrame;
 import scala.tools.nsc.matching.Matrix;
