@@ -2,6 +2,7 @@ package org.inquisitors.framework.statistical_analyzer.utils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by minudika on 8/5/16.
@@ -10,32 +11,36 @@ public class DataSummary {
     private String baseField = null;
     private ArrayList subfields = null;
     private HashMap<String,ArrayList>dataEntries = null;
-    private ArrayList<Record> records;
+    private List<ArrayList> records;
 
     public DataSummary(){
         subfields = new ArrayList<String>();
-        records = new ArrayList<Record>();
+        records = new ArrayList<ArrayList>();
     }
 
     public DataSummary(String... fields){
         this.baseField = fields[0];
-        records = new ArrayList<Record>();
+        records = new ArrayList<ArrayList>();
         subfields = new ArrayList<String>();
         for(int i=1; i<fields.length; i++){
             subfields.add(fields[i]);
         }
     }
 
-    public String getBaseField(){
-        return baseField;
+    public void setRecords(List<ArrayList> records){
+        this.records = records;
+    }
+
+    public List<ArrayList> getRecords() {
+        return records;
     }
 
     public void setBaseField(String baseField){
         this.baseField = baseField;
     }
 
-    public void addRecord(Record record){
-        this.records.add(record);
+    public String getBaseField(){
+        return baseField;
     }
 
     public void addSubfield(String field){
@@ -52,16 +57,4 @@ public class DataSummary {
             subfields.add(field);
         }
     }
-
-    /*public void addDataEntry(String fieldName,Object value){
-        if(dataEntries.get(fieldName)== null){
-            ArrayList<Object> list = new ArrayList<Object>();
-            list.add(value);
-            dataEntries.put(fieldName,list);
-        }
-        else{
-            dataEntries.get(fieldName).add(value);
-        }
-    }*/
-
 }

@@ -32,5 +32,13 @@
             <artifactId>spark-csv_2.10</artifactId>
             <version>1.4.0</version>
         </dependency>
+
+        <!--local dependencies-->
+        <dependency>
+            <groupId>org.inquisitors.crimedataanalysisframework</groupId>
+            <artifactId>frontConnector</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 </project>
