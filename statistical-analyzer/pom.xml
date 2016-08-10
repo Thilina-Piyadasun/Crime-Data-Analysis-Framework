@@ -32,13 +32,26 @@
             <artifactId>spark-csv_2.10</artifactId>
             <version>1.4.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-mllib_2.10</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>2.10.3</version>
+        </dependency>
         <!--local dependencies-->
         <dependency>
-            <groupId>org.inquisitors.crimedataanalysisframework</groupId>
             <artifactId>frontConnector</artifactId>
+            <groupId>org.inquisitors.crimedataanalysisframework</groupId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-
+        <dependency>
+            <artifactId>preprocessor</artifactId>
+            <groupId>org.inquisitors.crimedataanalysisframework</groupId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>

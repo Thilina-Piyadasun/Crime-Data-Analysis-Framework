@@ -1,4 +1,4 @@
-package org.inqusutors.framework.front_connector.api;
+package org.inquisitors.framework.front_connector.api;
 
 /**
  * Created by Thilina Piyadasun on 7/3/2016.

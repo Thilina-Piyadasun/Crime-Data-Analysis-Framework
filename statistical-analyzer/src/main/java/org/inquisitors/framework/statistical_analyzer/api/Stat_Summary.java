@@ -1,9 +1,12 @@
 package org.inquisitors.framework.statistical_analyzer.api;
 
-import org.apache.spark.sql.DataFrame;
-import scala.tools.nsc.matching.Matrix;
+import org.inquisitors.framework.statistical_analyzer.api.CorrelationMethod;
+import org.apache.spark.mllib.linalg.Vector;
+import org.inquisitors.framework.statistical_analyzer.utils.AssociationCrimeRules;
+import org.inquisitors.framework.statistical_analyzer.utils.FPGrowthCrime;
 
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Thilina
@@ -27,7 +30,7 @@ public interface Stat_Summary {
     * get correlation of given data set
     *   "pearson" or "spearman"
     * */
-    Matrix getCorrelation(CorrelationMethod method);
+    org.apache.spark.mllib.linalg.Matrix getCorrelation(CorrelationMethod method);
 
     /*
     * get Covariance of two colomns
@@ -42,7 +45,9 @@ public interface Stat_Summary {
     * frequent item sets in given data set
     * select convenient return type instead of Data frame
     * */
-    DataFrame getFrequentItems(String col[], double support);
+    ArrayList<ArrayList> getFrequentItems(String col[],double support);
 
+    List<FPGrowthCrime> frequentItemSets(double minSupport);
 
+    List<AssociationCrimeRules> mineFrequentPatterns(double minSupport,double conf);
 }
